@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  name: stock-app 
+  labels:    
+    app: stock-app
+spec:  
+  replicas: 2  
+  selector:    
+    matchLabels:
+      app: stock-app
+  template:
+    metadata:
+      labels:
+        app: stock-app
+    spec: 
+     containers:
+      - name: stock-app
+        image: chiaan2844/stock-app:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stock-app-service
+  labels:
+    app: stock-app
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+    nodePort: 32121
+  selector:
+    app: stock-app

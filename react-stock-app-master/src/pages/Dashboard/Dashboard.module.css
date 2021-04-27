@@ -1,0 +1,15 @@
+
+/* .infoCardContainer{
+    display:flex;
+   
+
+} */
+.dashboardContent{
+  background-color: var(--dashboard-bg);
+  padding: 40px 20px;
+  /* height: 70vh; */
+}
+.dashboardContentContainer{
+  margin: 0 auto;
+  max-width: var(--site-width);
+}
