@@ -27,10 +27,13 @@ function EditProfile() {
             phone:phone,
             gender:gender,
             balance :100
-        };
-    
+        }; 
+        // Add extra fields for the rest
+        // Needs dictionary of format {'first_name': 'sai','last_name':'dai','email':'sai@gmail.com','username': 'saidai','DOB':'08-26-1997',
+        // 'gender':'M','street_address':'375 56','city':'New York','state':'NY','zipcode':11220,'card_no':123456789,'exp_date':'08-26-2025','name':'Sai Dai',
+        // 'cvv':234} -> This should be the userProfile that is being passed, and call this function once user clicks save your profile.
         fetch('http://localhost:8000/api/userdata/',{
-          'method':'PUT',
+          'method':'POST',
           'body': JSON.stringify(userProfile),
           headers:{
             'Content-Type': 'application/json',
@@ -57,6 +60,9 @@ function EditProfile() {
                 </Link>
             </div>
         </header>
+
+
+
 
         < div className = 'login__container' >
         <h1 > Edit Profile </h1>

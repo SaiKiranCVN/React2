@@ -10,6 +10,7 @@ router.register('item',ItemViewSet)
 router.register('price',PriceViewSet)
 router.register('userdata',UserDataViewSet)
 router.register('inven',InvenViewSet)
+router.register('trade',TradeViewSet)
 
 urlpatterns = [
     path('api/',include(router.urls)),

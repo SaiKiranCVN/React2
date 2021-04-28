@@ -47,6 +47,27 @@ const Buy = ({ stocks }) => {
     getData();
   }, [stocks, ticker]);
 
+// buy_sell - 'B' for buying and, 'S' for selling
+// 'trade' Variable should have, the following dict format, {'email':'sai@gmail.com','quantity':23,'buy_sell':'B','price':234,'ticker':'AAPL'}
+// Same function should be called even for selling with 'buy_sell' : 'S'.
+
+
+
+  // fetch('http://localhost:8000/api/trade/',{
+  //   'method':'POST',
+  //   'body': JSON.stringify(trade),
+  //   headers:{
+  //     'Content-Type': 'application/json',
+  //     'Authorization' : 'Token f2d664ce87773e9a8f58660ce6c246f2e70fa277'
+  //   }
+  // }).then(resp => resp.json())
+  // .then(resp => console.log(resp))
+  // .catch(error => console.log(error))
+
+
+
+
+
   const getCurrentYearDividendYieldRating = (stocks) => {
     const sorted = sortStocksByDividendYield(stocks);
     let ranking;

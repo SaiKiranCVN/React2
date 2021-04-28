@@ -118,8 +118,12 @@ class TradeViewSet(viewsets.ModelViewSet):
         quantity = requst.data['quantity']
         buy_sell = request.data['buy_sell']
         price = request.data['price']
-        item_id = request.data['item_id']
-        un = request.data['un']
+        cursor.execute(f"SELECT * FROM item WHERE code='{request.data['ticker']}';")
+        df = cursor.fetchall()
+        item_id = df[0][0]
+        cursor.execute(f"SELECT * FROM user_data WHERE email='{request.data['email']}';")
+        gh = cursor.fetchall()
+        un = gh[0][0]
         opp = 'buyer_id' if buy_sell == 'B' else 'seller_id'
         if opp == 'buyer_id': # User Buying
 
