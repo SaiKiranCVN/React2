@@ -8,25 +8,44 @@ import { useStateValue } from "../../StateProvider";
 
 
 function EditProfile() {
-    const [name, setName] = useState(' ');
+    const [username, setName] = useState(' ');
+    const [lastName, setLastName] = useState(' ');
+    const [firstName, setFirstName] = useState(' ');
     const [age, setAge] = useState(' ');
     const [address, setAddress] = useState(' ');
+    const [city, setCity] = useState(' ');
+    const [state, setState] = useState(' ');
+    const [zip,setZip] = useState(' ');
+    const [card_no, setCardNo]  = useState(' ');
     const [phone, setPhone] = useState(' ');
     const [gender, setGender] = useState(' ');
+    const [exp_date,setExp_date] = useState(' ');
+    const [cvv,setCvv] = useState(' ');
+
+    
+   
    
     
     const [{  user, userProfile,basket }, dispatch] = useStateValue();
     const saveProfile = () => {
         // remove the item from the basket
         const userProfile = {
-            userName: name ,
+            userName: username ,
+            firstName: firstName,
+            lastName: lastName,
             email: user.email,
             userPwd: user.password,
             age:age,
             address:address,
+            city:city,
+            state:state,
+            zip:zip,
+            card_no:card_no,
+            cvv:cvv,
+            exp_date:exp_date,
             phone:phone,
             gender:gender,
-            balance :100
+            balance :1000
         }; 
         // Add extra fields for the rest
         // Needs dictionary of format {'first_name': 'sai','last_name':'dai','email':'sai@gmail.com','username': 'saidai','DOB':'08-26-1997',
@@ -68,10 +87,23 @@ function EditProfile() {
         <h1 > Edit Profile </h1>
         <h4 > Username :</h4> 
         <input type = 'text'
-        value = { name }
+        value = { username }
        
         onChange = { e => setName(e.target.value)}
         />
+        <h4 > First name :</h4> 
+        <input type = 'text'
+        value = { firstName }
+       
+        onChange = { e => setFirstName(e.target.value)}
+        />
+        <h4 > Last name :</h4> 
+        <input type = 'text'
+        value = { lastName }
+       
+        onChange = { e => setLastName(e.target.value)}
+        />
+        
         
         <h4 > E - mail :</h4> 
         <h6>{ user.email }</h6> 
@@ -94,6 +126,45 @@ function EditProfile() {
        
         onChange = { e => setAddress(e.target.value)}
         />
+        <h4>City:</h4>
+        <input type = 'text'
+        value = { city }
+       
+        onChange = { e => setCity(e.target.value)}
+        />
+        <h4>State:</h4>
+        <input type = 'text'
+        value = { state }
+       
+        onChange = { e => setState(e.target.value)}
+        />
+        <h4>Zipcode:</h4>
+        <input type = 'text'
+        value = { zip }
+       
+        onChange = { e => setZip(e.target.value)}
+        />
+        <h4>Card No:</h4>
+        <input type = 'text'
+        value = { card_no }
+       
+        onChange = { e => setCardNo(e.target.value)}
+        />
+
+        <h4>Exp Date:</h4>
+        <input type = 'text'
+        value = { exp_date }
+       
+        onChange = { e => setExp_date(e.target.value)}
+        />
+        <h4>Cvv:</h4>
+        <input type = 'text'
+        value = { cvv }
+       
+        onChange = { e => setCvv(e.target.value)}
+        />
+
+
         <h4>Phone:</h4>
         <input type = 'text'
         value = { phone }

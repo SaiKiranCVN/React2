@@ -12,7 +12,8 @@ const UserStockInfo = () => {
   return (
     <section className={styles.calculator}>
       <h3 className={styles.header}> Your Transaction History</h3>
-      
+      <h4 > Balance :</h4> 
+      <h6>{userProfile[0].balance }</h6>
       {basket.slice(0).reverse().map(item => ( 
         < History ticker = { item.ticker }
                   name = { item.name }
