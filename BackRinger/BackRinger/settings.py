@@ -106,7 +106,7 @@ DATABASES = {
         'NAME': 'ringer',
         'USER': 'root',
         'PASSWORD': 'rootroot',
-        'HOST': 'localhost',
+        'HOST': 'ring.cpqiozbjlzz9.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
