@@ -27,7 +27,7 @@ function Login() {
             'body': JSON.stringify(userInfo),
             headers:{
               'Content-Type': 'application/json',
-              'Authorization' : 'Token e0cd06a4d6bae558933254d55bb773d6dab1acd2'
+              'Authorization' : 'Token 8d34f3dd98857f786c1db13373d6254053f8db1c'
             }
           }).then(resp => resp.json())
           .then(resp => console.log(resp))

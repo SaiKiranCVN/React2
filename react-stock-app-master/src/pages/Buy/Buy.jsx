@@ -58,7 +58,7 @@ const Buy = ({ stocks }) => {
   //   'body': JSON.stringify(trade),
   //   headers:{
   //     'Content-Type': 'application/json',
-  //     'Authorization' : 'Token f2d664ce87773e9a8f58660ce6c246f2e70fa277'
+  //     'Authorization' : 'Token 8d34f3dd98857f786c1db13373d6254053f8db1c'
   //   }
   // }).then(resp => resp.json())
   // .then(resp => console.log(resp))
