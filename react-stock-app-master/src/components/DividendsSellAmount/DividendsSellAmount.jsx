@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import styles from "./DividendsBuyAmount.module.css";
+import styles from "./DividendsSellAmount.module.css";
 import { getCurrentYear } from "../../helpers";
 
 import {auth} from "../../firebase";
 import { useStateValue } from "../../StateProvider";
-const DividendsBuyAmount = ({ stock, stocks }) => {
+const DividendsSellAmount = ({ stock, stocks }) => {
   const [amount, setAmount] = useState(0);
   const currentYear = getCurrentYear();
   const currentYearDividend = stock.dividends[currentYear];
@@ -25,11 +25,11 @@ const DividendsBuyAmount = ({ stock, stocks }) => {
 
     return total.toFixed(2);
   };
-  const addToBasket = () => {
+  const removeFromBasket = () => {
     // dispatch the item into the data layer
     
     dispatch({
-      type: "ADD_TO_BASKET",
+      type: "Remove_From_BASKET",
       item: {
         name: stock.name,
         ticker: stock.ticker,
@@ -41,7 +41,7 @@ const DividendsBuyAmount = ({ stock, stocks }) => {
         pe: stock.pe,
         amountofShares: getAmountOfShares(),
         amountinUSD: amount,
-        type:"Buy",
+        type:"Sell",
       },
      
     });
@@ -84,7 +84,7 @@ const DividendsBuyAmount = ({ stock, stocks }) => {
         
       </div>
       <div className={styles.buycontainer}>
-      <button onClick={addToBasket} className={styles.buy}>Buy</button>
+      <button onClick={removeFromBasket} className={styles.buy}>Sell</button>
       </div>
 
     
@@ -92,4 +92,4 @@ const DividendsBuyAmount = ({ stock, stocks }) => {
   );
 };
 
-export default DividendsBuyAmount;
+export default DividendsSellAmount;

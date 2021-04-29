@@ -20,7 +20,7 @@ const reducer = (state, action) => {
  
     switch (action.type) {
         case "ADD_TO_BASKET":
-            const balance = state.userProfile[0].balance - action.item.amountinUSD
+            const balance = parseInt(state.userProfile[0].balance) - action.item.amountinUSD
 
             delete(state.userProfile.balance)
             state.userProfile[0].balance = balance
@@ -36,10 +36,20 @@ const reducer = (state, action) => {
                 userProfile: [action.userProfile],
                 
             }
+        case "Remove_From_BASKET":
+            const balance1 = parseInt(state.userProfile[0].balance) + parseInt(action.item.amountinUSD)
 
+            delete(state.userProfile.balance)
+            state.userProfile[0].balance = balance1
+            
+            return {
+                ...state,
+                basket: [...state.basket, action.item],
+                userProfile:[...state.userProfile]
+            };
         // case "REMOVE_FROM_BASKET":
         //     const index = state.basket.findIndex(
-        //         (basketItem) => basketItem.id === action.id
+        //         (basketItem) => basketItem.name === action.name
         //     );
         //     let newBasket = [...state.basket];
 
@@ -48,7 +58,7 @@ const reducer = (state, action) => {
 
         //     } else {
         //         console.warn(
-        //             `Cant remove product (id: ${action.id}) as its not in basket!`
+        //             `Cant remove product (id: ${action.name}) as its not in basket!`
         //         )
         //     }
 

@@ -2,12 +2,13 @@ import React from 'react';
 import './History.css'
 
 
-function History({ ticker, name,bid, pe,amountinUSD, amountofShares}) {
+function History({ ticker,type, name,bid, pe,amountinUSD, amountofShares}) {
 
     return ( 
         <div className = 'checkoutProduct' >
     
         <div className = 'checkoutProduct__info'>
+        <p className = 'checkoutProduct__title' > { type} </p> 
         <p className = 'checkoutProduct__title' > Name: { name} </p> 
         <p className = "checkoutProduct__price" >
         <p>pe / bid: {pe}/{bid} </p>

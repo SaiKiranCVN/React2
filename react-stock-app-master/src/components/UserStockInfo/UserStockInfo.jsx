@@ -20,7 +20,8 @@ const UserStockInfo = () => {
                   bid = { item.bid }
                   pe = { item.pe }
                   amountinUSD = { item.amountinUSD }
-                 amountofShares = { item.amountofShares} />
+                 amountofShares = { item.amountofShares} 
+                 type = {item.type}/>
             ))}
     </section>
   );}

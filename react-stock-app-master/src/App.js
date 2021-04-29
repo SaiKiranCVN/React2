@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import StockView from "./pages/StockView/StockView";
 import Buy from "./pages/Buy/Buy";
+import Sell from "./pages/Sell/Sell";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import EditProfile from "./pages/EditProfile/EditProfile";
@@ -138,8 +139,11 @@ function App() {
           path="/stocks/:ticker"
           render={(props) => <StockView {...props} stocks={stocks} />}
         />
+        
         <Route  path="/buy/:ticker"
         render={(props) => <Buy {...props} stocks={stocks} />}/>
+        <Route  path="/sell/:name"
+        render={(props) => <Sell {...props} stocks={stocks} />}/>
 
 
         < Route path = "/login" >

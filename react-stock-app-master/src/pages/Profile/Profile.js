@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/chart-line.svg";
 import { auth } from "../../firebase";
 import UserStockInfo from "../../components/UserStockInfo/UserStockInfo"
+import UserStockSell from "../../components/UserStockSell/UserStockSell"
 import { useStateValue } from "../../StateProvider";
 function Profile() {
     const [{  user, userProfile,basket }, dispatch] = useStateValue();
@@ -40,8 +41,9 @@ function Profile() {
         />
             ))}
 
-        
+        <div className = 'login__container' ><UserStockSell /></div>
         <div className = 'login__container' ><UserStockInfo/></div>
+        
        
         </div>
         
