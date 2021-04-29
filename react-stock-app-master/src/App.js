@@ -31,20 +31,20 @@ function App() {
   const [price,setPrice] = useState([]);
 
 
-  const getPrice = async () => {
-    await fetch('http://localhost:8000/api/price/',{
-        'method':'GET',
-        headers:{
-          'Content-Type': 'application/json',
-          'Authorization' : 'Token 8d34f3dd98857f786c1db13373d6254053f8db1c'
-        }
-      }).then(resp => resp.json())
-      .then(resp => {
-        setPrice(resp);
-        // console.log('Setted------',price)
-      })
-      .catch(error => console.log(error));
-  }
+  // const getPrice = async () => {
+  //   await fetch('http://localhost:8000/api/price/',{
+  //       'method':'GET',
+  //       headers:{
+  //         'Content-Type': 'application/json',
+  //         'Authorization' : 'Token 8d34f3dd98857f786c1db13373d6254053f8db1c'
+  //       }
+  //     }).then(resp => resp.json())
+  //     .then(resp => {
+  //       setPrice(resp);
+  //       // console.log('Setted------',price)
+  //     })
+  //     .catch(error => console.log(error));
+  // }
 
   const getItem = async () => {
 
@@ -53,12 +53,24 @@ function App() {
   const getData = async () => {
     //backend, to get exchange and stock info
 
-    await getPrice();
-
+    // await getPrice();
+    fetch('http://localhost:8000/api/price/',{
+        'method':'GET',
+        headers:{
+          'Content-Type': 'application/json',
+          'Authorization' : 'Token 8d34f3dd98857f786c1db13373d6254053f8db1c'
+        }
+      }).then(resp => resp.json())
+      .then(resp => {
+        setPrice(resp);
+        // const stocks = resp;
+        // console.log('Setted------',price)
+      })
+      .catch(error => console.log(error));
     const exchanges = data.exchanges;
     const stocks = data.stocks;
     // const stocks = price;
-    // console.log('Assigning - ',price)
+    console.log('Assigning - ',price)
     return {
       exchanges,
       stocks,
