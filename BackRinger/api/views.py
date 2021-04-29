@@ -32,7 +32,7 @@ import sys
 
 #establishing the connection
 conn = mysql.connector.connect(
-   user='root', password='rootroot', host='127.0.0.1', database='ringer',auth_plugin='mysql_native_password')
+   user='root', password='rootroot', host='ring.cpqiozbjlzz9.us-east-1.rds.amazonaws.com', database='ringer',auth_plugin='mysql_native_password')
 
 #Creating a cursor object using the cursor() method
 cursor = conn.cursor()
@@ -329,7 +329,7 @@ class UserDataViewSet(viewsets.ViewSet):
     authentication_classes = (TokenAuthentication,)
 
     def create(self,request):
-        if 'pk' not in request.data:
+        if 'email' not in request.data:
             print('Creating:-')
             # print(request.data)
             d = {}
@@ -339,8 +339,8 @@ class UserDataViewSet(viewsets.ViewSet):
             while c in q:
                 c = getCode()
             tom = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            # em = request.data['user']['email']
-            em = request.data['email']
+            em = request.data['user']['email']
+            # em = request.data['email']
             cursor.execute(f"INSERT INTO user_data(user_id,first_name,last_name,username,password,email,wallet,dob,gender,time_registered,updated_date) VALUES ('{c}','xxxx','xxxx','xxxxxxxx','xxxx','{em}',10000,'{tom}','U','{tom}','{tom}');")
 
             #Address
@@ -358,12 +358,16 @@ class UserDataViewSet(viewsets.ViewSet):
             bb = Bank.objects.raw("SELECT bank_id FROM bank")
             while bc in bb:
                 bc = getCode()
-            cursor.execute(f"INSERT INTO BANK(bank_id,card_no,exp_date,cvv,name,defa,updated_date,user_id) VALUES ('{bc}',0,'{tom}',0,'xxxx','Y','{tom}','{c}');")
+            cursor.execute(f"INSERT INTO bank(bank_id,card_no,exp_date,cvv,name,defa,updated_date,user_id) VALUES ('{bc}',0,'{tom}',0,'xxxx','Y','{tom}','{c}');")
             conn.commit()
+            print('Inserted')
 
         else:
             print('Updating:-')
-            pk = request.data['pk']
+            print(request.data)
+            cursor.execute(f"SELECT * FROM user_data WHERE email='{request.data['email']}';")
+            ml = cursor.fetchall()
+            pk = ml[0][0]
             #User
             cursor.execute(f"SELECT * FROM user_data WHERE user_id='{pk}';")
             us = cursor.fetchall()
@@ -374,27 +378,27 @@ class UserDataViewSet(viewsets.ViewSet):
             DOB = us[8]
             gender = us[9]
             updated_date = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            if len(request.data['first_name']) != 0:
-                first_name = request.data['first_name']
-            if len(request.data['last_name']) != 0:
-                last_name = request.data['last_name']
-            if len(request.data['username']) != 0:
-                username = request.data['username']
-            if len(request.data['DOB']) != 0:
-                DOB = request.data['DOB']
+            if len(request.data['firstName']) != 0:
+                first_name = request.data['firstName']
+            if len(request.data['lastName']) != 0:
+                last_name = request.data['lastName']
+            if len(request.data['userName']) != 0:
+                username = request.data['userName']
+            # if len(request.data['DOB']) != 0:
+            #     DOB = request.data['DOB']
             if len(request.data['gender']) != 0:
                 gender = request.data['gender']
             
-            cursor.execute(f"UPDATE user_data SET first_name = '{first_name}',last_name = '{last_name}',username = '{username}',DOB = '{DOB}',gender = '{gender}',updated_date = '{updated_date}' WHERE user_id = '{pk}';")
+            cursor.execute(f"UPDATE user_data SET first_name = '{first_name}',last_name = '{last_name}',username = '{username}',DOB = '{DOB}',gender = '{gender}',updated_date = '{updated_date}',wallet=wallet+1000 WHERE user_id = '{pk}';")
 
             #Address
             cursor.execute(f"SELECT * FROM address where user_id='{pk}';")
             ar = cursor.fetchall()
             ar = ar[0]
-            street_address = request.data['street_address']
+            street_address = request.data['address']
             city = request.data['city']
             state = request.data['state']
-            zipcode = request.data['zipcode']
+            zipcode = request.data['zip']
 
             cursor.execute(f"UPDATE address SET street_address = '{street_address}',city='{city}',state='{state}',zipcode='{zipcode}',updated_date='{updated_date}' WHERE user_id='{pk}';")
 
@@ -405,11 +409,11 @@ class UserDataViewSet(viewsets.ViewSet):
             card_no = request.data['card_no']
             exp_date = request.data['exp_date']
             cvv = request.data['cvv']
-            name = request.data['name']
+            # name = request.data['name']
 
-            cursor.execute(f"UPDATE bank SET card_no='{card_no}',exp_date= STR_TO_DATE('{exp_date}', '%Y-%m-%d'),cvv='{cvv}',name='{name}',defa='Y',updated_date='{updated_date}' WHERE user_id='{pk}';")
+            cursor.execute(f"UPDATE bank SET card_no='{card_no}',exp_date= STR_TO_DATE('{exp_date}', '%Y-%m-%d'),cvv='{cvv}',name='{username}',defa='Y',updated_date='{updated_date}' WHERE user_id='{pk}';")
             conn.commit()
-        
+            print('Updating Done!')
         return HttpResponse()
 
 
