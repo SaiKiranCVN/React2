@@ -1,10 +1,12 @@
 export const initialState = {
-    userProfile:[{userName:"",
+    userProfile:[{userName:"",firstName:"",
+    lastName: "",
     email:"",
     gender:"",
     age:"",address:""
-    ,phone:"",
+    ,city : "",state:"",zip:"",phone:"",card_no : "",cvv:"",
     balance:1000,}],
+
     user: null,
     basket:[],
 };

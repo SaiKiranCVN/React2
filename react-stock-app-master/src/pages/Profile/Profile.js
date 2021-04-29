@@ -23,18 +23,26 @@ function Profile() {
       
         {  userProfile.map(item => ( 
         < User userName = { item.userName }
+        firstName = {item.firstName}
+        lastName = {item.lastName}
         email = { item.email }
         gender = { item.gender }
         age = { item.age }
         address = { item.address }
+        city = { item.city }
+        state = { item.state }
+        zip = { item.zip }
+        card_no = { item.card_no }
+        cvv = { item.cvv }
+
         phone = { item.phone}
-        balance = { item.balance} />
+        balance = { item.balance} 
+        />
             ))}
-         
 
         
         <div className = 'login__container' ><UserStockInfo/></div>
-        {/* <div className = 'login__container' ><UserStockInfo/></div> */}
+       
         </div>
         
         </div>
