@@ -1,0 +1,183 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B76B784F-C9B9-07F8-C082-7FBE68C3B05F" name="Trade">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>8FF1497D-0876-9DFF-5B61-D5131B5AF95D</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="trade_id" id="0FD0D9CA-49C8-F9D9-C921-46B9E9B2544F">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>975D6A0F-CBCC-294A-4FE2-4CF521E34EDC</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="quantity" id="F604FD4E-3251-59F0-4661-9BC8920A5318">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>AC616D0E-E2F0-9CF3-C7A6-5AD1C8EF1CB1</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="unit_price" id="4DE87643-B5BA-2B87-F948-E20EF82E2BF0">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>A452F88C-BCAC-D00B-50AE-7D4B900065AD</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="updated_date" id="1F69E724-2FE4-B807-18F3-EE591A0FF6BF">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>9C6CBFF7-ABCD-B6A5-584C-7C5A330A7247</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="item_id" id="177A225C-84DA-0E9C-DE6C-16AAB3D77D88">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>D695FE56-7BD3-6C16-05A2-AD03DD2D9A6B</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C52A2305-4D9E-61BC-EA7E-F3F414BC8F32" referredColumn="5F9337B5-34F4-A129-CE99-5975C8E7A998"/>
+</associations>
+</Column>
+<Column name="pay_id" id="EB66823E-B830-8B4A-3F11-863C5D552D50">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>67CB067B-B1A4-BB81-FEB5-7014F6B70BF3</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1DDA107-B183-371E-25DB-517EBE12734D" referredColumn="091A443A-D7FD-5D0E-9F90-44CB245AD2E2"/>
+</associations>
+</Column>
+<Column name="buyer_id" id="E7735038-73AC-66F6-B1D3-825FDD337677">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>7876E96B-971A-F68C-CB36-B132B7C58D26</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="48AE3471-789A-AA4D-DEC7-B910232C386A" referredColumn="70F24DE1-71D5-BC1C-3E20-2568E47F00E8"/>
+</associations>
+</Column>
+<Column name="seller_id" id="51A66394-F789-E7DA-734C-96CBE63ABFE2">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>9A3A2ED3-A289-10B1-E974-582CCEC36156</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DF8CF3CC-8D85-7D01-3C4A-90AD5A905FC5" referredColumn="70F24DE1-71D5-BC1C-3E20-2568E47F00E8"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BFF52A1F-0A79-02BD-56F2-7C0738CF19C3" name="Trade_PK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>4580295B-9018-7B3E-2E1C-4161A101F5F3</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0FD0D9CA-49C8-F9D9-C921-46B9E9B2544F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="12C850F7-5E86-4AA4-9EA2-C5691D9AFB9A" name="user_data_FK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>3EF658D5-FA8A-D1EB-3A47-4E2F51B3DC67</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7735038-73AC-66F6-B1D3-825FDD337677"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EAE66E5C-F948-73DA-9AA7-AB4ACCB40BC2" name="Item_FKv2">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>E7470CA0-5683-7EE2-906C-E7D27257E1AD</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="177A225C-84DA-0E9C-DE6C-16AAB3D77D88"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8AA2C261-45AD-8CDB-DF05-4DD9061FA05B" name="user_data_FKv2">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>9153DD67-1321-3273-9EF4-101B328A7A8B</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51A66394-F789-E7DA-734C-96CBE63ABFE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A0AD503-D0A6-6DD1-C1F5-C395DA83606C" name="Payment_FK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>BDBB1421-13F7-5E66-67AA-F483B06E27F6</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB66823E-B830-8B4A-3F11-863C5D552D50"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

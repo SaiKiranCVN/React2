@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3FE19282-2D2F-E910-052A-169429FE2D2B" name="trade_offer">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>91B051C4-F62C-6C20-FA55-46BECABC889C</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pri" id="8C1C647C-D996-D552-A843-0BCB6794F016">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>EBB50FFB-A4D3-C396-648B-3468E5773A82</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="trade_id" id="3E3FE622-034E-B9DA-966F-12F061E9ED97">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>4532B96A-946F-971C-5D29-3F3086640FAF</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="541F57D8-BFE5-A8C0-45C4-6ED83F7598B4" referredColumn="0FD0D9CA-49C8-F9D9-C921-46B9E9B2544F"/>
+</associations>
+</Column>
+<Column name="offer_id" id="A55E6FC8-C957-BB83-5486-4E45B9E77FF9">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>12C91035-4C52-A943-AF1F-D63B9628CB8F</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="139DA266-0FBA-E46C-5B41-4252F22E5B5A" referredColumn="12777E97-F7FE-1AA6-DC25-D8393F1CD2EA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F551943-C7A6-88C6-D0C9-085F3CA1731B" name="trade_offer_PK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>347FD70A-A219-40DC-7B18-5D1078E53BB7</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C1C647C-D996-D552-A843-0BCB6794F016"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9AFF240B-067D-3C93-E4E4-4E3B51EC6922" name="Offer_FK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>E1A4052D-784A-FA6F-02A1-46579A3921EE</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A55E6FC8-C957-BB83-5486-4E45B9E77FF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D99E954-ECDE-31E7-42DC-4D840ABFCC69" name="Trade_FK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>1A443E6D-2EAD-53BD-19A8-06E5167619DD</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3E3FE622-034E-B9DA-966F-12F061E9ED97"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

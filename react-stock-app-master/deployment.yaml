@@ -16,7 +16,7 @@ spec:
     spec: 
      containers:
       - name: stock-app
-        image: chiaan2844/stock-app:1.0
+        image: saikirancvn/stock-app:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 3000

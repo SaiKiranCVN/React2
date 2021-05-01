@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0308C1C7-6F46-1697-1178-3C3237AF23DF" name="Payment">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:46:08 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="pay_id" id="DC565BDC-005F-FB29-90C8-F52BD5C14936">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:46:15 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="amount" id="40606647-B8D9-B6B9-5E0C-2D67C2648E77">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:46:30 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+</Attribute>
+<Attribute name="updated_date" id="8121A123-7D43-286A-8F72-D6A7D9A794ED">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-13 17:03:17 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1FA133EC-437A-C9F1-DC58-F34DC0B18D4A" name="Payment PK">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:46:29 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DC565BDC-005F-FB29-90C8-F52BD5C14936</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

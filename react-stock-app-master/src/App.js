@@ -53,7 +53,7 @@ function App() {
 
   const getData = async () => {
     //backend, to get exchange and stock info
-
+    var stoc = []
     // await getPrice();
     fetch('http://localhost:8000/api/price/',{
         'method':'GET',
@@ -63,21 +63,28 @@ function App() {
         }
       }).then(resp => resp.json())
       .then(resp => {
+        console.log('RESPPPPPP',resp)
         setPrice(resp);
+        stoc = resp;
+        // const stocks = resp; 
         // const stocks = resp;
         // console.log('Setted------',price)
       })
       .catch(error => console.log(error));
     const exchanges = data.exchanges;
-    const stocks = data.stocks;
-    // const stocks = price;
-    console.log('Assigning - ',price)
+    // const stocks = data.stocks;
+    const stocks = stoc;
+    console.log('Assigning stoc - ',stoc)
     return {
       exchanges,
       stocks,
     };
   };
   // 123
+
+  const getUserProfile = (email) => {
+    
+  }
 
 
 
@@ -91,7 +98,9 @@ function App() {
     const { exchanges, stocks } = await getData();
 
     setExchanges(exchanges);
+    console.log('Asigment done here , so check',price)
     setStocks(stocks);
+    // setStocks(price);
   }, []);
   useEffect(() => {
     // will only run once when the app component loads...
@@ -120,7 +129,7 @@ function App() {
   return (
     <div className="App">
      {
-       console.log(price, "=====>")
+       console.log(price,stocks, "price=====>")
      }
       <Router>
         <Route
@@ -129,7 +138,8 @@ function App() {
           render={(props) => (
             <Dashboard
               exchanges={exchanges}
-              stocks={stocks}
+              // stocks={stocks}
+              stocks={price}
               setStocks={setStocks}
               {...props}
             />
@@ -137,13 +147,13 @@ function App() {
         />
         <Route
           path="/stocks/:ticker"
-          render={(props) => <StockView {...props} stocks={stocks} />}
+          render={(props) => <StockView {...props} stocks={price} />}
         />
         
         <Route  path="/buy/:ticker"
-        render={(props) => <Buy {...props} stocks={stocks} />}/>
+        render={(props) => <Buy {...props} stocks={price} />}/>
         <Route  path="/sell/:name"
-        render={(props) => <Sell {...props} stocks={stocks} />}/>
+        render={(props) => <Sell {...props} stocks={price} />}/>
 
 
         < Route path = "/login" >

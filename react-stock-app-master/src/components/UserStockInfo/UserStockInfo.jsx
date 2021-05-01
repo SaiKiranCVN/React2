@@ -8,7 +8,7 @@ import { useStateValue } from "../../StateProvider";
 const UserStockInfo = () => {
  
   const [{  user, userProfile,basket }, dispatch] = useStateValue();
-
+  console.log(userProfile, "userProfile===>");
   return (
     <section className={styles.calculator}>
       <h3 className={styles.header}> Your Transaction History</h3>

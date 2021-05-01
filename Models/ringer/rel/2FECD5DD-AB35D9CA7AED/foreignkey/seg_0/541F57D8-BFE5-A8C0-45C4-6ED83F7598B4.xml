@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="541F57D8-BFE5-A8C0-45C4-6ED83F7598B4" containerWithKeyObject="3FE19282-2D2F-E910-052A-169429FE2D2B" localFKIndex="1D99E954-ECDE-31E7-42DC-4D840ABFCC69" name="Trade_FK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>1A443E6D-2EAD-53BD-19A8-06E5167619DD</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<referredTableLongName>Trade</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B76B784F-C9B9-07F8-C082-7FBE68C3B05F</referredTableID>
+<keyObject>BFF52A1F-0A79-02BD-56F2-7C0738CF19C3</keyObject>
+<referredKeyID>BFF52A1F-0A79-02BD-56F2-7C0738CF19C3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>trade_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

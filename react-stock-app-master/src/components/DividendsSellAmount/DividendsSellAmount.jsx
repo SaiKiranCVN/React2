@@ -19,6 +19,22 @@ const DividendsSellAmount = ({ stock, stocks }) => {
     return 0;
   };
 
+
+  const item= {
+    name: stock.name,
+    ticker: stock.ticker,
+    bid: stock.bid,
+    ask: stock.ask,
+    sector: stock.sector,
+    change: stock.change,
+    dividends: stock.dividends,
+    pe: stock.pe,
+    amountofShares: getAmountOfShares(),
+    amountinUSD: amount,
+    type:"S",
+    email: user.email
+  };
+
   const calculateProjectedDividend = () => {
     const shares = getAmountOfShares();
     const total = shares * currentYearDividend;
@@ -27,27 +43,27 @@ const DividendsSellAmount = ({ stock, stocks }) => {
   };
   const removeFromBasket = () => {
     // dispatch the item into the data layer
-    
+    // console.log('gkuefgewkufg')
+    fetch('http://localhost:8000/api/trade/',{
+      'method':'POST',
+      'body': JSON.stringify(item),
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization' : 'Token 8d34f3dd98857f786c1db13373d6254053f8db1c'
+      }
+    }).then(resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(error => console.log(error))
+
+  
+
+
+
     dispatch({
       type: "Remove_From_BASKET",
-      item: {
-        name: stock.name,
-        ticker: stock.ticker,
-        bid: stock.bid,
-        ask: stock.ask,
-        sector: stock.sector,
-        change: stock.change,
-        dividends: stock.dividends,
-        pe: stock.pe,
-        amountofShares: getAmountOfShares(),
-        amountinUSD: amount,
-        type:"Sell",
-      },
-     
+      item,     
     });
   };
-
-
 
   return (
     <section className={styles.calculator}>
@@ -84,7 +100,7 @@ const DividendsSellAmount = ({ stock, stocks }) => {
         
       </div>
       <div className={styles.buycontainer}>
-      <button onClick={removeFromBasket} className={styles.buy}>Sell</button>
+      <button onClick={()=>{console.log("remove from basket");removeFromBasket();}} className={styles.buy}>Sell</button>
       </div>
 
     

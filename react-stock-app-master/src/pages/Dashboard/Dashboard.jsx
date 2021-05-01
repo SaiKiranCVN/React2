@@ -17,6 +17,9 @@ import styles from "./Dashboard.module.css";
 const Dashboard = ({ exchanges, stocks, setStocks }) => {
   return (
     <>
+    {
+      console.log(stocks, "stocks in dashboard")
+    }
       <Header />
       <Subheader>
         <ExchangeList exchanges={exchanges} />

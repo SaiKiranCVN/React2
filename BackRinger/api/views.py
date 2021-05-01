@@ -115,9 +115,10 @@ class TradeViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
 
     def create(self,request):
-        quantity = requst.data['quantity']
-        buy_sell = request.data['buy_sell']
-        price = request.data['price']
+        print('Trading Started ....')
+        quantity = float(request.data['amountofShares'])
+        buy_sell = request.data['type']
+        price = float(request.data['amountinUSD'])/float(quantity)
         cursor.execute(f"SELECT * FROM item WHERE code='{request.data['ticker']}';")
         df = cursor.fetchall()
         item_id = df[0][0]
@@ -126,18 +127,20 @@ class TradeViewSet(viewsets.ModelViewSet):
         un = gh[0][0]
         opp = 'buyer_id' if buy_sell == 'B' else 'seller_id'
         if opp == 'buyer_id': # User Buying
-
-            cursor.execute(f"""SELECT * from trade where {opp} = '1' and seller_id <> '1' and unit_price <= {price} and item_id='{item_id}' and pay_id='1';""")
+            cursor.execute(f"""UPDATE user_data SET wallet = wallet - {request.data['amountinUSD']} where user_id='{un}';""")
+            cursor.execute(f"""SELECT * from trade where {opp} = '1' and seller_id <> '1' and unit_price <= {str(price)} and item_id='{item_id}' and pay_id='1';""")
             a = cursor.fetchall()
             # print(a)
             if len(a) == 0:
                 # cursor.execute(f"""INSERT INTO offer VALUES ('{getCode(10)}',{quantity},{buy_sell},{price},'{d.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}','{d.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
-                cursor.execute(f"""INSERT INTO trade(trade_id,quantity,unit_price,item_id,buyer_id,seller_id,pay_id,updated_date) VALUES ('{getCode(10)}',{quantity},{price},'{item_id}','{un}','1','1','{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")		
+                cursor.execute(f"""INSERT INTO trade(trade_id,quantity,unit_price,item_id,buyer_id,seller_id,pay_id,updated_date) VALUES ('{getCode(10)}',{quantity},{price},'{item_id}','{un}','1','1','{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
+                print('Only Insert')		
             else:
                 for e in a:
                     # the row has less items than required
+                    # print(type(e[1]))
                     if e[1] < quantity: 
-                        quantity -= e[1]
+                        quantity -= float(e[1])
                         # cursor.execute(f"""UPDATE offer set buy_sell='{'D'}' WHERE offer_id={e[0]};""")
                         # Include in payment
                         amount = e[1]*e[2]
@@ -160,14 +163,14 @@ class TradeViewSet(viewsets.ModelViewSet):
                         else:
                             cursor.execute(f"""UPDATE inventory SET bought_price={price},quantity = quantity + {e[1]},updated_date = '{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' where inven_id = '{there[0][0]}';""")
                     else:
-                        remain = e[1] - quantity
-                        amount = quantity*e[2]
+                        remain = float(e[1]) - float(quantity)
+                        amount = quantity*float(e[2])
                         iddd = getCode(10) # PaymentID
                         cursor.execute(f"""INSERT INTO payment VALUES ('{iddd}',{amount},'{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
                         # Include in trade
                         cursor.execute(f"""UPDATE trade SET buyer_id='{un}',pay_id='{iddd}',updated_date='{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' WHERE trade_id='{e[0]}';""") 
                         if remain != 0:
-                            cursor.execute(f"""INSERT INTO trade(trade_id,quantity,unit_price,item_id,buyer_id,seller_id,pay_id,updated_date) VALUES ('{getCode(10)}',{remain},{e[2]},'{e[4]}','1','{un}','1','{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
+                            cursor.execute(f"""INSERT INTO trade(trade_id,quantity,unit_price,item_id,buyer_id,seller_id,pay_id,updated_date) VALUES ('{getCode(10)}',{remain},{e[2]},'{e[3]}','1','{un}','1','{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
                         # Include in Offer
                         offer_id = getCode(10)
                         # BuySell - D is done, price is total amount
@@ -185,6 +188,7 @@ class TradeViewSet(viewsets.ModelViewSet):
                             cursor.execute(f"""UPDATE inventory SET bought_price={str(round(price,2))},quantity = quantity + {str(round(e[1],2))},updated_date = '{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' where inven_id = '{there[0][0]}';""")
                         break
         else: # User Selling
+            cursor.execute(f"""UPDATE user_data SET wallet = wallet + {request.data['amountinUSD']} where user_id='{un}';""")
             cursor.execute(f"""SELECT * from trade where {opp}='1' and buyer_id <> '1' and unit_price >= {price} and item_id='{item_id}' and pay_id='1';""")
             a = cursor.fetchall()
             if len(a) == 0:
@@ -193,8 +197,8 @@ class TradeViewSet(viewsets.ModelViewSet):
             else:
                 for e in a:
                     # the row has less items than required
-                    if e[1] < quantity: 
-                        quantity += e[1]
+                    if float(e[1]) < quantity: 
+                        quantity += float(e[1])
                         # cursor.execute(f"""UPDATE offer set buy_sell='{'D'}' WHERE offer_id={e[0]};""")
                         # Include in payment
                         amount = e[1]*e[2]
@@ -213,14 +217,14 @@ class TradeViewSet(viewsets.ModelViewSet):
                         there = cursor.fetchall()
                         cursor.execute(f"""UPDATE inventory SET bought_price={price},quantity = quantity + {e[1]},updated_date = '{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' where inven_id = '{there[0][0]}';""")
                     else:
-                        remain = e[1] - quantity
-                        amount = quantity*e[2]
+                        remain = float(e[1]) - float(quantity)
+                        amount = quantity*float(e[2])
                         iddd = getCode(10) # PaymentID
                         cursor.execute(f"""INSERT INTO payment VALUES ('{iddd}',{amount},'{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
                         # Include in trade
                         cursor.execute(f"""UPDATE trade SET seller_id='{un}',pay_id='{iddd}',updated_date='{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' WHERE trade_id='{e[0]}';""") 
                         if remain != 0:
-                            cursor.execute(f"""INSERT INTO trade(trade_id,quantity,unit_price,item_id,buyer_id,seller_id,pay_id,updated_date) VALUES ('{getCode(10)}',{remain},{e[2]},'{e[4]}','{un}',1,1,'{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
+                            cursor.execute(f"""INSERT INTO trade(trade_id,quantity,unit_price,item_id,buyer_id,seller_id,pay_id,updated_date) VALUES ('{getCode(10)}',{remain},{e[2]},'{e[3]}','{un}',1,1,'{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');""")
                         # Include in Offer
                         offer_id = getCode(10)
                         # BuySell - D is done, price is total amount
@@ -232,9 +236,10 @@ class TradeViewSet(viewsets.ModelViewSet):
                         there = cursor.fetchall()
                         # print(e[1],type(e[1]),'282')
                         # print(f"""UPDATE inventory SET bought_price={price},quantity = quantity - {str(e[1])},updated_date = '{d.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' where inven_id = {there[0][0]};""")
-                        cursor.execute(f"""UPDATE inventory SET bought_price={price},quantity = quantity + {str(e[1])},updated_date = '{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' where inven_id = '{there[0][0]}';""")
+                        cursor.execute(f"""UPDATE inventory SET bought_price={price},quantity = quantity - {str(e[1])},updated_date = '{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}' where inven_id = '{there[0][0]}';""")
                         break
         conn.commit()
+        return HttpResponse()
 
 
 
@@ -303,7 +308,7 @@ class PriceViewSet(viewsets.ModelViewSet):
             div[2019] = qd['yr2019']
             div[2020] = qd['yr2020']
             div[2021] = qd['yr2021']
-            rep['divident'] = div
+            rep['dividends'] = div
             rep['research'] = []
             cursor.execute(f"SELECT * FROM research r JOIN item_research i on i.ids = r.ids WHERE item_id='{queryset2['item_id']}';")
             rss = cursor.fetchall() # ids, title,description,link,author_name,authorid,updated_date,item_id,ids

@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BCA657A4-058A-5B23-004D-FF4095B590CC" name="Inventory">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 23:19:18 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="inven_id" id="B646A953-D56A-F69A-ABE3-9DFC5C1132BC">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 23:19:26 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="item_id" id="7B071422-B531-EB09-DAFE-1A16E2B2BAE0">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 23:19:38 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bought_price" id="FB13AD37-C052-7DF1-8647-ECD7C12C5BA0">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 23:20:07 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+</Attribute>
+<Attribute name="quantity" id="68C74898-F5D6-A352-A035-8AF7B39D0BD7">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 23:20:25 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+</Attribute>
+<Attribute name="updated_date" id="73541835-5CBC-554E-A9BD-7D26EE67B053">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-13 17:04:58 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id" id="7E2C8643-CF62-CB8F-7990-B2400A328B24">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:22:52 UTC</createdTime>
+<generatorID>453E206D-9399-2F7D-09F1-FD5E1A0B5EE6</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<referedAttribute>3DE2FFE6-3832-AD47-46A2-5759A9D5C97D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2D499ED7-A799-7597-2F2C-D2862828306A" name="Inventory PK">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 23:19:37 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B646A953-D56A-F69A-ABE3-9DFC5C1132BC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

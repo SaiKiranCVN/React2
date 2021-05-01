@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8FF1497D-0876-9DFF-5B61-D5131B5AF95D" name="Trade">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:22:58 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="trade_id" id="975D6A0F-CBCC-294A-4FE2-4CF521E34EDC">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:23:05 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="quantity" id="AC616D0E-E2F0-9CF3-C7A6-5AD1C8EF1CB1">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:23:23 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+</Attribute>
+<Attribute name="unit_price" id="A452F88C-BCAC-D00B-50AE-7D4B900065AD">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:24:47 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+</Attribute>
+<Attribute name="updated_date" id="9C6CBFF7-ABCD-B6A5-584C-7C5A330A7247">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-13 17:03:03 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="item_id" id="D695FE56-7BD3-6C16-05A2-AD03DD2D9A6B">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:21:22 UTC</createdTime>
+<generatorID>E7470CA0-5683-7EE2-906C-E7D27257E1AD</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<referedAttribute>AC68EED0-10EB-908E-B3C3-2FE4792DADF5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pay_id" id="67CB067B-B1A4-BB81-FEB5-7014F6B70BF3">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:21:56 UTC</createdTime>
+<generatorID>BDBB1421-13F7-5E66-67AA-F483B06E27F6</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<referedAttribute>DC565BDC-005F-FB29-90C8-F52BD5C14936</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id" id="7876E96B-971A-F68C-CB36-B132B7C58D26">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:22:52 UTC</createdTime>
+<generatorID>3EF658D5-FA8A-D1EB-3A47-4E2F51B3DC67</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<referedAttribute>3DE2FFE6-3832-AD47-46A2-5759A9D5C97D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id1" id="9A3A2ED3-A289-10B1-E974-582CCEC36156">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:22:52 UTC</createdTime>
+<generatorID>9153DD67-1321-3273-9EF4-101B328A7A8B</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<referedAttribute>3DE2FFE6-3832-AD47-46A2-5759A9D5C97D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4580295B-9018-7B3E-2E1C-4161A101F5F3" name="Trade PK">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:23:21 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>975D6A0F-CBCC-294A-4FE2-4CF521E34EDC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

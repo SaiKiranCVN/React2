@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="139DA266-0FBA-E46C-5B41-4252F22E5B5A" containerWithKeyObject="3FE19282-2D2F-E910-052A-169429FE2D2B" localFKIndex="9AFF240B-067D-3C93-E4E4-4E3B51EC6922" name="Offer_FK">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-17 14:25:18 UTC</createdTime>
+<generatorID>E1A4052D-784A-FA6F-02A1-46579A3921EE</generatorID>
+<ownerDesignName>ringer</ownerDesignName>
+<referredTableLongName>Offer</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5C70946E-464A-0A1D-76CC-AEDF0ACC158E</referredTableID>
+<keyObject>39096B74-6888-FBE4-A024-C7D40EA0E42B</keyObject>
+<referredKeyID>39096B74-6888-FBE4-A024-C7D40EA0E42B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>offer_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

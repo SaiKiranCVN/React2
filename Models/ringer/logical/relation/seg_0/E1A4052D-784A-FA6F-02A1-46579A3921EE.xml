@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="offer_trade" directorySegmentName="seg_0" id="E1A4052D-784A-FA6F-02A1-46579A3921EE">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:30:06 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<sourcePk>35CE44A8-6A20-AA95-8D48-EE42F8CF3BAB</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>06F4D1B0-A00E-92A4-DF88-83A2DC86F49C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>91B051C4-F62C-6C20-FA55-46BECABC889C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

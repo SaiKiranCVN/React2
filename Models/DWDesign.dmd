@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="DWDesign" id="6B2C60D2-29AC-46E8-0277-CA81A6CDEDB4" version="3.5">
+<createdBy>saiki</createdBy>
+<createdTime>2021-04-18 14:36:35 UTC</createdTime>
+<ownerDesignName>DWDesign</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6B2C60D2-29AC-46E8-0277-CA81A6CDEDB4</designId>
+</OSDM_Design>

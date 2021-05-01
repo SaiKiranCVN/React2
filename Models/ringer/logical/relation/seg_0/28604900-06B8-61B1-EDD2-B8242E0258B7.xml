@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="iterm_price" directorySegmentName="seg_0" id="28604900-06B8-61B1-EDD2-B8242E0258B7">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:21:04 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<sourcePk>0E32FC9A-68DA-91EC-C372-D517435E06B6</sourcePk>
+<targetPk>D6CE5357-554F-7681-DBAD-39CA501F1234</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>97478A62-19C7-D46B-FDE5-90633BD985C6</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>D69F693B-F5AE-99BD-06A2-B07AF01898BC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

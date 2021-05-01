@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ringer" id="7028B93B-DF58-7601-468B-B62D719AB698" version="3.5">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 21:40:59 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7028B93B-DF58-7601-468B-B62D719AB698</designId>
+</OSDM_Design>

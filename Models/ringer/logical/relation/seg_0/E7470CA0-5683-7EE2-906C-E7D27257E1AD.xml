@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="iterm_trade" directorySegmentName="seg_0" id="E7470CA0-5683-7EE2-906C-E7D27257E1AD">
+<createdBy>saikirancvn</createdBy>
+<createdTime>2021-03-31 22:28:45 UTC</createdTime>
+<ownerDesignName>ringer</ownerDesignName>
+<engineerTo>
+<item key="2FECD5DD-8AA8-8009-54C8-AB35D9CA7AED" value="true"/>
+</engineerTo>
+<sourcePk>D6CE5357-554F-7681-DBAD-39CA501F1234</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D69F693B-F5AE-99BD-06A2-B07AF01898BC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8FF1497D-0876-9DFF-5B61-D5131B5AF95D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

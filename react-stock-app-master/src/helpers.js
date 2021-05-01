@@ -1,4 +1,5 @@
 export const sortStocksByDividendYield = (stocks) => {
+  console.log('Copying....',stocks);
   const stocksCopy = [...stocks];
   const year = getCurrentYear();
   
