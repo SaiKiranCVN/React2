@@ -65,9 +65,16 @@ ROOT_URLCONF = 'BackRinger.urls'
 # }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://localhost:32121",
+    "http://localhost:58597",
+    "http://localhost",
+    "http://localhost:*"
 ]
-
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^http://localhost:*",
+    r"^http://127.0.0.1:*",
+]
 
 
 TEMPLATES = [
