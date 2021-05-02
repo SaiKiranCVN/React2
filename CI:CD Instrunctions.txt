@@ -1,0 +1,19 @@
+// install docker by clicking the "Docker Desktop for Windows" button
+ https://docs.docker.com/docker-for-windows/install/
+
+//login to docker account
+// go to react-stock-app-master directory
+$docker build -t stock-app:1.0 -f Dockerfile.txt .
+//check the image is built successfully by this command. And Remember the "image id" 
+$docker images
+$docker tag {image id}  {yourhubusername}/stock-app:1.0
+$docker push {yourhubusername}/stock-app:1.0
+-----------------------------------------------------
+// run munikube as cluster to run replicas of our app.
+//after minikube set up and start successfully, run 
+$minikube start
+$kubectl apply -f deployment.yaml
+$kubectl get pods (make sure there are pods running)
+$kubectl get service(make sure there is service running)
+$minikube service stock-app-service
+//click on the tunnel output of the url, then it should run on the webpage
