@@ -2,4 +2,4 @@
 
 ## System Design
 
-![alt txt]("/System%20Design.jpg")
+![alt txt](/System%20Design.jpg)
